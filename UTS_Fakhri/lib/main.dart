@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'navbarpage1.dart';
 import 'navbarpage2.dart';
 import 'navbarpage3.dart';
+import 'detail_page.dart'; 
 
 //#TODO_14 Buat function main dan jalankan aplikasi
 void main() {
@@ -36,7 +37,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _selectedIndex = 0; // Menyimpan index halaman yang dipilih
+  int _selectedIndex = 0; 
 
   //#TODO_4 Daftar halaman
   final List<Widget> _pages = const [
@@ -48,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
   //#TODO_5 Fungsi untuk memperbarui halaman yang dipilih
   void _onItemTapped(int index) {
     setState(() {
-      _selectedIndex = index; // Memperbarui halaman yang dipilih
+      _selectedIndex = index; 
     });
   }
 
@@ -57,9 +58,9 @@ class _MyHomePageState extends State<MyHomePage> {
     //#TODO_6 Bangun Scaffold
     return Scaffold(
       appBar: AppBar(
-        title: const Text(' Bottom Navigation Bar'), 
+        title: const Text(' Bottom Navigation Bar'),
       ),
-      body: _pages[_selectedIndex], 
+      body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -77,6 +78,17 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
+      ),
+      
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => ProfileDetailPage()),
+          );
+        },
+        child: const Icon(Icons.arrow_forward),
       ),
     );
   }

@@ -16,7 +16,7 @@ class _NamaBottomNavBar2State extends State<NamaBottomnavBar2> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Bottom Navbar Kedua'),
+        title: const Text('Business'),
       ),
       body: Column(
         children: [

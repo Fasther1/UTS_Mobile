@@ -16,7 +16,7 @@ class _NamaBottomNavBar1State extends State<NamaBottomNavBar1> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Bottom Navbar Pertama'),
+        title: const Text('HOME'),
       ),
       body: ListView.builder(
         itemCount: items.length,
